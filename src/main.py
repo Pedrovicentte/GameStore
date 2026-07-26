@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 import requests
 import os
 
+from src.auth_routes import auth_router
+
 load_dotenv()
 
 app = FastAPI()
@@ -22,3 +24,5 @@ def listar_jogos():
     url = f"https://api.rawg.io/api/games?key={API_KEY}&page_size=20&ordering=-rating"
     resposta = requests.get(url)
     return resposta.json()
+
+app.include_router(auth_router)
