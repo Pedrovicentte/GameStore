@@ -17,7 +17,6 @@ app.add_middleware(
 )
 
 API_KEY = os.getenv("RAWG_API_KEY")
-print("🚨 CHAVE LIDA PELO PYTHON:", API_KEY) # Adicione esta linha!
 @app.get("/jogos")
 def listar_jogos():
     url = f"https://api.rawg.io/api/games?key={API_KEY}&page_size=20&ordering=-rating"
