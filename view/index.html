@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Promo Jogos</title>
+</head>
+<body>
+    <!-- Navbar simples -->
+    <nav class="navbar">
+            <img class="logo" src="imagens/logo.png">        <ul>
+            <li><button class="button"><a href="#super-ofertas">Ofertas</a></button></li>
+            <li><button class="button"><a href="#jogos-baratos">Promoção</a></button></li>
+            <li><button class="button"><a href="#login-usuario">Login</a></button></li>
+        </ul>
+    </nav>
+
+    <!-- Banner Dinâmico (Hero Section) -->
+    <header id="banner-destaque" class="hero">
+        <div class="hero-conteudo">
+            <span class="tag-destaque">Oferta do Dia</span>
+            <h1 id="hero-titulo">Carregando...</h1>
+            <div class="hero-precos">
+                <span id="hero-preco-antigo" class="preco-antigo"></span>
+                <span id="hero-preco-novo" class="preco-novo"></span>
+            </div>
+            <button class="btn-comprar btn-grande">Aproveitar Oferta</button>
+        </div>
+    </header>
+    <section class="estatisticas">
+
+        <div>
+        <h2>+30.000</h2>
+        <p>Jogos</p>
+        </div>
+
+        <div>
+        <h2>95%</h2>
+        <p>Descontos</p>
+        </div>
+
+        <div>
+        <h2>50M+</h2>
+        <p>Clientes</p>
+        </div>
+
+        <div>
+        <h2>24h</h2>
+        <p>Suporte</p>
+        </div>
+
+    </section>
+    <main>
+        <!-- Categoria 1 -->
+        <section id="super-ofertas" class="categoria-section">
+            <h2 class="titulo-categoria">🔥 Ofertas Arrasadoras (+80% OFF)</h2>
+            <div id="vitrine-super" class="container-jogos"></div>
+        </section>
+
+    </main>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
