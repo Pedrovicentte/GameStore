@@ -1,0 +1,107 @@
+body{
+
+    margin:0;
+
+    background:#111827;
+
+    color:white;
+
+    font-family:Segoe UI;
+
+}
+
+.banner{
+
+    height:350px;
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:50px;
+
+    display:flex;
+
+    gap:50px;
+
+}
+
+.imagem img{
+
+    width:400px;
+
+    border-radius:15px;
+
+}
+
+.informacoes{
+
+    flex:1;
+
+}
+
+#nome{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.nota{
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+}
+
+.preco{
+
+    font-size:42px;
+
+    color:#00ff88;
+
+    font-weight:bold;
+
+    margin:30px 0;
+
+}
+
+#btnCarrinho{
+
+    width:250px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:20px;
+
+    background:#7c3aed;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#btnCarrinho:hover{
+
+    background:#9d5cff;
+
+    transform:scale(1.05);
+
+}

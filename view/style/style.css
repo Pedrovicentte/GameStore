@@ -135,23 +135,22 @@ text-shadow:0 5px 20px rgba(0,0,0,.6);
 
 /* Banner Dinâmico (Hero) */
 .hero{
+    min-height: 90vh;
 
-    min-height:90vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 
-    background-size:cover;
-    background-position:center;
+    display: flex;
+    align-items: center;
 
-    display:flex;
-    align-items:center;
+    padding: 160px 80px 80px;
 
-    padding:160px 80px 80px;
+    position: relative;
 
-    position:relative;
+    overflow: hidden;
 
-
-    transition:
-        opacity .3s,
-        background-image .5s;
+    transition: opacity .4s ease;
 }
 
 
@@ -215,11 +214,155 @@ transparent
     margin-top: 20px;
 }
 
-/* Categorias e Grid */
+
 .categoria-section{
 
 padding:80px;
 }
+
+.apresentacao{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:90px 80px;
+
+}
+
+.texto-apresentacao{
+
+    flex:1;
+
+}
+
+.subtitulo{
+
+    color:#8b5cf6;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+.texto-apresentacao h2{
+
+    font-size:48px;
+
+    margin:20px 0;
+
+    line-height:1.2;
+
+}
+
+.texto-apresentacao p{
+
+    color:#cfcfcf;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    margin-bottom:25px;
+
+    text-align:justify;
+
+}
+
+.imagem-apresentacao{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.imagem-apresentacao img{
+
+    width:100%;
+
+    max-width:520px;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 40px rgba(124,58,237,.35);
+
+    transition:.4s;
+
+}
+
+.imagem-apresentacao img:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.cssbuttons-io-button {
+  background: #a370f0;
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #714da6;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #7b52b9;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
 
 .estatisticas{
 

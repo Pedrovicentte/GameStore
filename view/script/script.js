@@ -1,6 +1,5 @@
-const API_KEY = "de3eb8b0cdda4418a21a35755d80a67d";
+const apiUrl = "http://127.0.0.1:8000/jogos";   
 
-const apiUrl = `https://api.rawg.io/api/games?key=${API_KEY}&page_size=20&ordering=-rating`;
 let indiceBanner = 0;
 
 async function carregarLoja() {
@@ -8,7 +7,7 @@ async function carregarLoja() {
 
         const resposta = await fetch(apiUrl);
         const dados = await resposta.json();
-
+        console.log("Dados recebidos da API:", dados);
         const jogos = dados.results;
 
         // Banner
