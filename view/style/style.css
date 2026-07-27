@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Paladins";
+    src: url("../fonts/paladins/paladins.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Akira";
+    src: url("../fonts/akira_expanded/Akira\ Expanded\ Demo.otf") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +34,8 @@ main{
 
 h1,h2,h3{
 
-text-shadow:0 5px 20px rgba(0,0,0,.6);
+    font-family: "Akira", sans-serif;
+    text-shadow:0 5px 20px rgba(0,0,0,.6);
 
 }
 
@@ -130,6 +141,7 @@ text-shadow:0 5px 20px rgba(0,0,0,.6);
 }
 
 .navbar a {
+
     color: #b3b3b3;
     text-decoration: none;
     font-weight: bold;
@@ -186,16 +198,11 @@ box-shadow:0 0 20px #ff005d;
 }
 
 .hero h1{
-
-font-size:4.5rem;
-
-font-weight:800;
-
-line-height:1.1;
-
-margin:20px 0;
-
-text-shadow:0 10px 25px black;
+    font-size:4.5rem;
+    font-weight:800;
+    line-height:1.1;
+    margin:20px 0;
+    text-shadow:0 10px 25px black;
 
 }
 
@@ -223,50 +230,39 @@ transparent
 
 
 .categoria-section{
-
-padding:80px;
+    padding:80px;
 }
 
 .apresentacao{
-
+    font-family: "Paladins", sans-serif;
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:60px;
-
     padding:90px 80px;
 
 }
 
 .texto-apresentacao{
-
+    
     flex:1;
 
 }
 
 .subtitulo{
-
     color:#8b5cf6;
-
     font-size:18px;
-
     font-weight:bold;
-
     text-transform:uppercase;
-
     letter-spacing:2px;
 
 }
 
 .texto-apresentacao h2{
 
-    font-size:48px;
-
+    font-family: "Paladins", sans-serif;
+    font-size:40px;
     margin:20px 0;
-
     line-height:1.2;
 
 }
@@ -274,13 +270,9 @@ padding:80px;
 .texto-apresentacao p{
 
     color:#cfcfcf;
-
     font-size:18px;
-
     line-height:1.9;
-
     margin-bottom:25px;
-
     text-align:justify;
 
 }
@@ -288,9 +280,7 @@ padding:80px;
 .imagem-apresentacao{
 
     flex:1;
-
     display:flex;
-
     justify-content:center;
 
 }
@@ -298,13 +288,9 @@ padding:80px;
 .imagem-apresentacao img{
 
     width:100%;
-
     max-width:520px;
-
     border-radius:20px;
-
     box-shadow:0 20px 40px rgba(124,58,237,.35);
-
     transition:.4s;
 
 }
@@ -317,39 +303,39 @@ padding:80px;
 
 /* From Uiverse.io by adamgiebl */ 
 .cssbuttons-io-button {
-  background: #a370f0;
-  color: white;
-  font-family: inherit;
-  padding: 0.35em;
-  padding-left: 1.2em;
-  font-size: 17px;
-  font-weight: 500;
-  border-radius: 0.9em;
-  border: none;
-  letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
-  box-shadow: inset 0 0 1.6em -0.6em #714da6;
-  overflow: hidden;
-  position: relative;
-  height: 2.8em;
-  padding-right: 3.3em;
-  cursor: pointer;
+    background: #a370f0;
+    color: white;
+    font-family: "Akira", sans-serif;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
 }
 
 .cssbuttons-io-button .icon {
-  background: white;
-  margin-left: 1em;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.2em;
-  width: 2.2em;
-  border-radius: 0.7em;
-  box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
-  right: 0.3em;
-  transition: all 0.3s;
+    background: white;
+    margin-left: 1em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    right: 0.3em;
+    transition: all 0.3s;
 }
 
 .cssbuttons-io-button:hover .icon {
@@ -359,7 +345,7 @@ padding:80px;
 .cssbuttons-io-button .icon svg {
   width: 1.1em;
   transition: transform 0.3s;
-  color: #7b52b9;
+  color: #8b5cf6;
 }
 
 .cssbuttons-io-button:hover .icon svg {
@@ -374,61 +360,49 @@ padding:80px;
 .estatisticas{
 
     display:flex;
-
     justify-content:center;
-
-    gap:60px;
-
     flex-wrap:wrap;
-
-    padding:45px 30px;
-
+    gap: 0.5px;
+    padding:15px 30px;
     background:#15161d;
-
     border-top:1px solid rgba(255,255,255,.08);
-
     border-bottom:1px solid rgba(255,255,255,.08);
 
 }
 
-.estatisticas div{
-
-    width:170px;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    text-align:center;
-
-    background:#20212b;
-
-    transition:.3s;
-
+.estatisticas div {
+    
+    width: 24%;
+    padding: 19px;
+    border-radius: 0;
+    text-align: center;
+    background: #20212c;
+    transition: .3s;
+    border: 1px solid rgba(0, 0, 0, 0.062);
 }
 
+
 .estatisticas div:hover{
-
+    margin: auto;
     transform:translateY(-6px);
-
+    font-family: "Paladins", sans-serif;
     box-shadow:0 10px 25px rgba(124,58,237,.35);
 
 }
 
 .estatisticas h2{
 
+        font-family: "Paladins", sans-serif;
     color:#8b5cf6;
-
     font-size:2rem;
-
     margin-bottom:10px;
 
 }
 
 .estatisticas p{
 
+    font-family: "Paladins", sans-serif;
     color:#bdbdbd;
-
     font-size:15px;
 
 }
@@ -436,35 +410,28 @@ padding:80px;
 
 .titulo-categoria{
 
-font-size:34px;
-
-margin-bottom:35px;
-
-font-weight:700;
-
-border-left:5px solid #7c3aed;
-
-padding-left:15px;
+    font-family: "Paladins", sans-serif;
+    font-size:34px;
+    margin-bottom:35px;
+    font-weight:700;
+    border-left:5px solid #7c3aed;
+    padding-left:15px;
 
 }
 
 .container-jogos{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+    gap:15px;
 }
 /* Cards (Mantendo a estrutura anterior) */
 
 .card-jogo{
 
     background:#18181b;
-
-    border-radius:14px;
-
+    border-radius:5px;
     overflow:hidden;
-
     transition:.3s;
-
     border:1px solid rgba(255,255,255,.05);
 
 }
@@ -481,7 +448,6 @@ padding-left:15px;
 .card-jogo:hover{
 
     transform:translateY(-6px);
-
     box-shadow:0 15px 35px rgba(124,58,237,.25);
 
 }
@@ -497,6 +463,7 @@ padding-left:15px;
 }
 
 .info-jogo h3 {
+    
     font-size: 1.1rem;
     margin-bottom: 10px;
     white-space: nowrap;
@@ -505,6 +472,7 @@ padding-left:15px;
 }
 
 .preco-antigo {
+    
     text-decoration: line-through;
     color: #888;
     font-size: 0.9rem;
@@ -512,63 +480,172 @@ padding-left:15px;
 }
 
 .preco-novo {
+    
     color: #03dac6;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
+/* From Uiverse.io by cssbuttons-io */ 
+.wrapper {
+ perspective: 500px;
+ transform: rotatex(10deg);
+ animation: rotateAngle 30s linear infinite;
+ width: auto;
+}
+
+.wrapper button {
+ display: block;
+ position: relative;
+ margin: 0.5em 0;
+ padding: 0.8em 2.2em;
+ cursor: pointer;
+ background: radial-gradient(90deg ,#a370f0,white );
+ border: none;
+ border-radius: 0.4em;
+ text-transform: uppercase;
+ font-size: 19px;
+ font-family: "Work Sans", sans-serif;
+ font-weight: 500;
+ letter-spacing: 0.04em;
+ mix-blend-mode: color-dodge;
+ perspective: 500px;
+ transform-style: preserve-3d;
+}
+
+.wrapper button:before, .wrapper button:after {
+ --z: 0px;
+ position: absolute;
+ top: 0;
+ left: 0;
+ display: block;
+ content: "";
+ width: 100%;
+ height: 100%;
+ opacity: 0;
+ mix-blend-mode: inherit;
+ border-radius: inherit;
+ transform-style: preserve-3d;
+ transform: translate3d(calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
+}
+
+.wrapper button span {
+ mix-blend-mode: none;
+ display: block;
+}
+
+.wrapper button:after {
+ background-color: #5D00FF;
+}
+
+.wrapper button:before {
+ background-color: #FF1731;
+}
+
+.wrapper button:hover {
+ background-color: #FFF65B;
+ transition: background 0.3s 0.1s;
+}
+
+.wrapper button:hover:before {
+ --z: 0.04;
+ animation: translateWobble 2.2s ease forwards;
+}
+
+.wrapper button:hover:after {
+ --z: -0.06;    
+ animation: translateWobble 2.2s ease forwards;
+}
+
 .btn-comprar{
-margin-top: 30px;
-padding:15px;
-
-border:none;
-
-border-radius:12px;
-
-background:linear-gradient(45deg,#7c3aed,#9333ea);
-
-font-size:17px;
-
-font-weight:bold;
-
-transition:.3s;
-
-cursor:pointer;
-
-box-shadow:0 0 30px rgba(124,58,237,.35);
-
+    background: #8b5cf6;
+    color: white;
+    font-family: "Akira";
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .btn-comprar:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 0 45px rgba(124,58,237,.7);
+    transform:translateY(-4px);
+    box-shadow:0 0 45px rgba(124,58,237,.7);
 
 }
 
 .card-jogo{
 
-animation:aparecer .6s ease;
+    animation:aparecer .6s ease;
 
 }
 
 @keyframes aparecer{
-
 from{
-
-opacity:0;
-
-transform:translateY(50px);
-
+    opacity:0;
+    transform:translateY(50px);
 }
-
 to{
-
-opacity:1;
-
-transform:translateY(0);
-
+    opacity:1;
+    transform:translateY(0);
+}
 }
 
+
+@keyframes rotateAngle {
+    0% {
+        transform: rotateY(0deg) rotateX(10deg);
+    }
+
+    25% {
+        transform: rotateY(20deg) rotateX(10deg);
+    }
+
+    50% {
+        transform: rotateY(0deg) rotateX(10deg);
+    }
+
+    75% {
+        transform: rotateY(-20deg) rotateX(10deg);
+    }
+
+    100% {
+        transform: rotateY(0deg) rotateX(10deg);
+    }
+}
+
+@keyframes translateWobble {
+ 0% {
+  opacity: 0;
+  transform: translate3d(calc(var(--z) * 0px), calc(var(--z) * 0px), calc(var(--z) * 0px));
+ }
+
+ 16% {
+  transform: translate3d(calc(var(--z) * 160px), calc(var(--z) * 160px), calc(var(--z) * 160px));
+ }
+
+ 28% {
+  opacity: 1;
+  transform: translate3d(calc(var(--z) * 70px), calc(var(--z) * 70px), calc(var(--z) * 70px));
+ }
+
+ 44% {
+  transform: translate3d(calc(var(--z) * 130px), calc(var(--z) * 130px), calc(var(--z) * 130px));
+ }
+
+ 59% {
+  transform: translate3d(calc(var(--z) * 85px), calc(var(--z) * 85px), calc(var(--z) * 85px));
+ }
+
+ 73% {
+  transform: translate3d(calc(var(--z) * 110px), calc(var(--z) * 110px), calc(var(--z) * 110px));
+ }
+
+ 88% {
+  opacity: 1;
+  transform: translate3d(calc(var(--z) * 90px), calc(var(--z) * 90px), calc(var(--z) * 90px));
+ }
+
+ 100% {
+  opacity: 1;
+  transform: translate3d(calc(var(--z) * 100px), calc(var(--z) * 100px), calc(var(--z) * 100px));
+ }
 }

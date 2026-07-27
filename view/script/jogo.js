@@ -1,25 +1,22 @@
-const API_KEY = "74e5b81f13b8438e9c12d03f200cb616";
-
 const parametros = new URLSearchParams(window.location.search);
-
 const id = parametros.get("id");
 
-async function carregarJogo(){
+async function carregarJogo() {
+    try {
+        const resposta = await fetch(`http://127.0.0.1:8000/api/jogos/${id}`);
+        
+        if (!resposta.ok) {
+            throw new Error("Erro ao buscar o jogo");
+        }
 
-    const resposta = await fetch(
-
-        `https://api.rawg.io/api/games/${id}?key=${API_KEY}`
-
-    );
-
-    const jogo = await resposta.json();
-
-    mostrarJogo(jogo);
-
+        const jogo = await resposta.json();
+        mostrarJogo(jogo);
+    } catch (erro) {
+        console.error("Falha de conexão:", erro);
+    }
 }
 
-function mostrarJogo(jogo){
-
+function mostrarJogo(jogo) {
     document.querySelector(".banner").style.backgroundImage =
         `url(${jogo.background_image})`;
 
@@ -32,6 +29,7 @@ function mostrarJogo(jogo){
     document.getElementById("rating").innerText =
         jogo.rating;
 
+    // description_raw é melhor aqui para evitar injeção de HTML indesejado da API
     document.getElementById("descricao").innerHTML =
         jogo.description_raw;
 
@@ -39,7 +37,6 @@ function mostrarJogo(jogo){
 
     document.getElementById("preco").innerText =
         preco;
-
 }
 
 carregarJogo();

@@ -2,27 +2,41 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
     <title>Detalhes do jogo</title>
-
     <link rel="stylesheet" href="style/jogo.css">
-
 </head>
 
 <body>
-
+    <nav class="navbar">
+        <img class="logo" src="imagens/logo.png" alt="Logo">
+        <ul>
+            <li>
+                <div class="button-borders">
+                    <button class="primary-button" onclick="document.getElementById('super-ofertas').scrollIntoView({behavior: 'smooth'})">OFERTAS</button>
+                </div>
+            </li>
+            <li>
+                <div class="button-borders">
+                    <button class="primary-button" onclick="document.querySelector('.apresentacao').scrollIntoView({behavior: 'smooth'})">ABOUT</button>
+                </div>
+            </li>
+            <li>
+                <div class="button-borders">
+                    <button class="primary-button" onclick="document.getElementById('login-usuario').scrollIntoView({behavior: 'smooth'})">LOGIN</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    
     <div class="banner"></div>
 
     <section class="container">
-
         <div class="imagem">
             <img id="capa">
         </div>
 
         <div class="informacoes">
-
             <h1 id="nome"></h1>
 
             <div class="nota">
@@ -38,15 +52,11 @@
             </button>
 
             <h2>Descrição</h2>
-
             <p id="descricao"></p>
-
         </div>
-
     </section>
 
     <script src="script/jogo.js"></script>
-
 </body>
 
 </html>
