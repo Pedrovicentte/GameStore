@@ -5,6 +5,7 @@ import requests
 import os
 
 from src.auth_routes import auth_router
+from src.orders_routes import order_router
 
 load_dotenv()
 
@@ -33,3 +34,4 @@ def buscar_jogo(jogo_id: int):
     return resposta.json()
 
 app.include_router(auth_router)
+app.include_router(order_router)

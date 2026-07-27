@@ -14,3 +14,9 @@ class UsuarioSchema(BaseModel):
 class LoginSchema(BaseModel):
     email: str
     senha: str
+    
+class OrdersSchema(BaseModel):
+    email: str
+    nome: str
+    jogos: list[str]
+    total: float

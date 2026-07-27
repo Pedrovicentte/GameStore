@@ -1,5 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from src.schemas import UsuarioSchema, LoginSchema
+from src.security import criar_token
 
 auth_router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -14,9 +15,13 @@ async def cadastro(usuario_schema: UsuarioSchema):
         usuario = next((u for u in usuarios_db if u.email == usuario_schema.email), None) 
         if usuario:
             raise HTTPException(status_code=400, detail="E-mail do usuário já cadastrado!")
-        else:
-            usuarios_db.append(usuario_schema)
-            return{"mensagem": "Usuário Cadastrado com Sucesso!"}
+        usuarios_db.append(usuario_schema)
+        token = criar_token(usuario_schema.email)
+        return{
+            "access_token": token,
+            "token_type": "bearer",
+            "mensagem": f"Bem-vindo, {usuario_schema   .nome}!"
+    }
 
 @auth_router.post("/login")
 async def login(login_schema: LoginSchema):
