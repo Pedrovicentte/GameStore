@@ -1,13 +1,13 @@
+@font-face {
+    font-family: "Akira";
+    src: url("../fonts/akira_expanded/Akira\ Expanded\ Demo.otf") format("truetype");
+}
+
 body{
-
     margin:0;
-
     background:#111827;
-
     color:white;
-
-    font-family:Segoe UI;
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,sans-serif;
 }
 
 /* Navegação */
@@ -119,97 +119,134 @@ body{
 }
 
 .banner{
-
-    height:350px;
-
+    height:500px;
     background-size:cover;
-
     background-position:center;
 
 }
 
 .container{
-
     max-width:1200px;
-
     margin:auto;
-
     padding:50px;
-
     display:flex;
-
     gap:50px;
 
 }
 
 .imagem img{
-
     width:400px;
-
     border-radius:15px;
 
 }
 
 .informacoes{
-
     flex:1;
 
 }
 
 #nome{
-
+    font-family: "Akira", sans-serif;
     font-size:48px;
-
     margin-bottom:20px;
 
 }
 
 .nota{
-
+    font-family: "Akira", sans-serif;
     font-size:22px;
-
     margin-bottom:20px;
 
 }
 
 .preco{
-
+    font-family: "Akira", sans-serif;
     font-size:42px;
-
     color:#00ff88;
-
     font-weight:bold;
-
     margin:30px 0;
 
 }
 
-#btnCarrinho{
+.btnCarrinho{
+    border-radius:10px;
+    border:1px solid #ffffff30;
 
-    width:250px;
+    background:rgba(124,58,237,.25);
 
-    height:60px;
-
-    border:none;
-
-    border-radius:12px;
-
-    font-size:20px;
-
-    background:#7c3aed;
+    backdrop-filter:blur(12px);
 
     color:white;
 
-    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
 
-    transition:.3s;
+    padding:15px 30px;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
+    font-size:17px;
+    font-weight:bold;
 
 }
 
-#btnCarrinho:hover{
+.btnCarrinho svg{
+    transition:.35s;
 
-    background:#9d5cff;
+}
 
-    transform:scale(1.05);
+.btnCarrinho::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120px;
+
+    width:80px;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+
+}
+
+.btnCarrinho:hover{
+    transform:translateY(-4px);
+    background:#7c3aed;
+    box-shadow:0 10px 30px rgba(124,58,237,.45);
+
+}
+
+.btnCarrinho:hover svg{
+    transform:translateX(6px);
+
+}
+
+.btnCarrinho:hover::before{
+    animation:shine .8s linear;
+
+}
+
+@keyframes shine{
+
+    from{
+
+        left:-120px;
+
+    }
+
+    to{
+
+        left:120%;
+
+    }
 
 }
