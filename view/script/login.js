@@ -25,11 +25,11 @@ formLogin.addEventListener('submit', async function(evento) {
         if (resposta.ok) {
             alert(dados.mensagem); 
             
-            localStorage.setItem('meu_token', dados.access_token);
+            localStorage.setItem('meu_token', dados.token);
             
-            window.location.href = '/loja.html'; 
+            window.location.href = 'index.html'; 
         } else {
-            divErro.innerText = dados.detail; 
+            alert("Erro no login: " + dados.detail); 
         }
 
     } catch (erro) {

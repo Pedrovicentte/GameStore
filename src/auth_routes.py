@@ -1,6 +1,6 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from src.schemas import UsuarioSchema, LoginSchema
-from src.security import criar_token
+from src.security import criar_token, usuario_logado
 
 auth_router = APIRouter(prefix="/auth", tags=["auth"])
 
@@ -29,4 +29,22 @@ async def login(login_schema: LoginSchema):
     if not usuario or usuario.senha != login_schema.senha:
         raise HTTPException(status_code=400, detail="Usuário não encontrado.")
     else:
-        return {"mensagem": f"Bem-vindo de volta, {usuario.nome}!", "papel": usuario.papel}
+        token = criar_token(usuario.email)
+    return {
+                "access_token": token,
+                "token_type": "bearer",
+                "mensagem": f"Bem-vindo de volta, {usuario.nome}!", 
+                "papel": usuario.papel
+            }
+
+@auth_router.get("/me")
+async def perfil_usuario(email_usuario: str = Depends(usuario_logado)):
+    usuario = next((u for u in usuarios_db if u.email == email_usuario), None)
+    if not usuario:
+        raise HTTPException(status_code=404, detail="Usuário não encontrado.")
+        
+    return {
+        "nome": usuario.nome, 
+        "email": usuario.email,
+        "papel": usuario.papel 
+    }

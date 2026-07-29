@@ -23,9 +23,18 @@
                 </div>
             </li>
             <li>
-                <div class="button-borders">
+                <li>
+                <!-- Container do Login (Fica visível se NÃO tiver token) -->
+                <div id="btn-login" class="button-borders">
                     <button class="primary-button" onclick="window.location.href='login.html'">LOGIN</button>
                 </div>
+                
+                <!-- Círculo de Perfil (Fica visível se TIVER token) -->
+                <div id="circulo-perfil" style="display: none;" title="Meu Perfil">
+                    <span>U</span> 
+                </div>
+            </li>
+                
             </li>
         </ul>
     </nav>
