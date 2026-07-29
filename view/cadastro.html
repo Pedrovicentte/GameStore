@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Play Zone</title>
+    <!-- Importa o estilo principal do site -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- Reutiliza o estilo do login para manter o mesmo padrão visual -->
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Mesma Navbar do site -->
+    <nav class="navbar">
+        <img class="logo" src="imagens/logo.png" alt="Logo" onclick="window.location.href='index.html'">
+        <ul>
+            <li>
+                <div class="button-borders">
+                    <button class="primary-button" onclick="window.location.href='index.html#super-ofertas'">OFERTAS</button>
+                </div>
+            </li>
+            <li>
+                <div class="button-borders">
+                    <button class="primary-button" onclick="window.location.href='index.html'">ABOUT</button>
+                </div>
+            </li>
+            <li>
+                <div class="button-borders">
+                    <button class="primary-button" onclick="window.location.href='login.html'">LOGIN</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="login-page">
+        <div class="login-card">
+            <h2>CRIAR CONTA</h2>
+            <p>Junte-se à Play Zone e aproveite as melhores ofertas.</p>
+
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="btn-login" style="margin-top: 15px;">CADASTRAR</button>
+            </form>
+
+            <div class="registro-link">
+                Já tem uma conta? <a href="login.html">Entrar</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
