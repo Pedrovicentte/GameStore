@@ -80,5 +80,40 @@ function renderizarVitrine(listaJogos, idContainer) {
 function comprarJogo(id) {
     alert(`Jogo ID: ${id} adicionado ao carrinho!`);
 }
-    
+
+
+async function verificarLogin() {
+    const token = localStorage.getItem('meu_token');
+
+    if (token) {
+        try {
+            const resposta = await fetch('http://127.0.0.1:8000/auth/me', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            const dados = await resposta.json();
+
+            if (resposta.ok) {
+                // Sucesso! Esconde o botão e mostra o perfil
+                document.getElementById('btn-login').style.display = 'none';
+                document.getElementById('circulo-perfil').style.display = 'flex';
+                
+                // Coloca a inicial do nome do usuário no círculo
+                document.getElementById('letra-perfil').innerText = dados.nome.charAt(0).toUpperCase();
+            } else {
+                // Se der Erro 401, limpa o token quebrado
+                localStorage.removeItem('meu_token');
+            }
+        } catch (erro) {
+            console.error("Erro ao validar token:", erro);
+        }
+    }
+}
+
+// 2. Mandamos a função executar assim que o arquivo for lido
 carregarLoja();
+verificarLogin();
+

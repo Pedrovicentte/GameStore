@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from src.database import engine, Base
+from src import models
 from dotenv import load_dotenv
 import requests
 import os
@@ -8,6 +10,8 @@ from src.auth_routes import auth_router
 from src.orders_routes import order_router
 
 load_dotenv()
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
