@@ -7,7 +7,7 @@ order_router = APIRouter(prefix="/order", tags=["orders"])
 orders_db = []
 
 @order_router.post("/")
-async def criar_pedido(pedido: OrdersSchema, email_usuario: str =Depends(usuario_logado)):
+async def criar_pedido(pedido: OrdersSchema, email_usuario: str = Depends(usuario_logado)):
     orders_db.append(pedido)
     return {
         "mensagem": f"Pedido criado com sucesso para {pedido.nome}!",

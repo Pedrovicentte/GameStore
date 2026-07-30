@@ -80,57 +80,5 @@ function renderizarVitrine(listaJogos, idContainer) {
 function comprarJogo(id) {
     alert(`Jogo ID: ${id} adicionado ao carrinho!`);
 }
-
-document.addEventListener("DOMContentLoaded", async function() {
     
-    const btnLogin = document.getElementById("btn-login");
-    const circuloPerfil = document.getElementById("circulo-perfil");
-
-    // 1. Pegamos a "pulseira VIP" que salvamos na hora do login
-    const token = localStorage.getItem("meu_token");
-
-    if (token) {
-        try {
-            // 2. Batemos na nova rota do FastAPI apresentando o token
-            const resposta = await fetch('http://127.0.0.1:8000/auth/me', {
-                method: 'GET',
-                headers: {
-                    // O padrão 'Bearer ' indica que estamos "portando" uma credencial de acesso
-                    'Authorization': `Bearer ${token}` 
-                }
-            });
-
-            if (resposta.ok) {
-                // 3. O FastAPI reconheceu o token e devolveu os dados do usuário!
-                const dadosUsuario = await resposta.json();
-                
-                if (btnLogin) btnLogin.style.display = "none"; // Esconde o botão
-                
-                if (circuloPerfil) {
-                    circuloPerfil.style.display = "flex"; // Mostra o círculo
-                    
-                    // Extrai a primeira letra do nome e força para maiúscula
-                    const inicial = dadosUsuario.nome.charAt(0).toUpperCase();
-                    
-                    // Injeta a letra dentro do círculo no HTML
-                    circuloPerfil.innerHTML = `<span>${inicial}</span>`;
-                    
-                    // Um charme extra: quando passar o mouse em cima, mostra o nome completo
-                    circuloPerfil.title = dadosUsuario.nome;
-                }
-            } else {
-                // Se a resposta não for OK (ex: token venceu após 60 min), limpamos o navegador
-                localStorage.removeItem("meu_token");
-                if (btnLogin) btnLogin.style.display = "block";
-                if (circuloPerfil) circuloPerfil.style.display = "none";
-            }
-        } catch (erro) {
-            console.error("Erro ao verificar o perfil do usuário:", erro);
-        }
-    } else {
-        // Se não existir token nenhum salvo no PC, mostra o botão de login normal
-        if (btnLogin) btnLogin.style.display = "block";
-        if (circuloPerfil) circuloPerfil.style.display = "none";
-    }
-});
 carregarLoja();

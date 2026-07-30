@@ -25,7 +25,7 @@ formLogin.addEventListener('submit', async function(evento) {
         if (resposta.ok) {
             alert(dados.mensagem); 
             
-            localStorage.setItem('meu_token', dados.token);
+            localStorage.setItem('meu_token', dados.access_token);
             
             window.location.href = 'index.html'; 
         } else {
