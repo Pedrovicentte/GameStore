@@ -23,18 +23,27 @@
                 </div>
             </li>
             <li>
-                <li>
                 <!-- Container do Login (Fica visível se NÃO tiver token) -->
                 <div id="btn-login" class="button-borders">
                     <button class="primary-button" onclick="window.location.href='login.html'">LOGIN</button>
                 </div>
                 
-                <!-- Círculo de Perfil (Fica visível se TIVER token) -->
-                <div id="circulo-perfil" style="display: none;" title="Meu Perfil">
-                    <span id="letra-perfil"></span> 
+                <!-- Container do Menu Inteiro (Fica visível se TIVER token) -->
+                <div id="menu-usuario" class="menu-container" style="display: none;">
+                    
+                    <!-- O Círculo -->
+                    <div id="circulo-perfil" class="circulo-perfil" onclick="abrirMenu()">
+                        <span id="letra-perfil"></span>
+                    </div>
+
+                    <!-- A Caixinha Suspensa -->
+                    <div id="caixa-menu" class="caixa-menu">
+                        <a href="#" class="menu-item">Meu Perfil</a>
+                        <a href="#" class="menu-item">Carrinho</a>
+                        <button onclick="LogOut()" class="menu-item btn-sair">Sair</button>
+                    </div>
+
                 </div>
-            </li>
-                
             </li>
         </ul>
     </nav>

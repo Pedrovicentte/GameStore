@@ -23,7 +23,6 @@ formLogin.addEventListener('submit', async function(evento) {
         const dados = await resposta.json();
 
         if (resposta.ok) {
-            alert(dados.mensagem); 
             
             localStorage.setItem('meu_token', dados.access_token);
             

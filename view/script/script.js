@@ -81,7 +81,6 @@ function comprarJogo(id) {
     alert(`Jogo ID: ${id} adicionado ao carrinho!`);
 }
 
-
 async function verificarLogin() {
     const token = localStorage.getItem('meu_token');
 
@@ -97,13 +96,16 @@ async function verificarLogin() {
             const dados = await resposta.json();
 
             if (resposta.ok) {
-                // Sucesso! Esconde o botão e mostra o perfil
+                // Esconde o botão de login original
                 document.getElementById('btn-login').style.display = 'none';
-                document.getElementById('circulo-perfil').style.display = 'flex';
-                
-                // Coloca a inicial do nome do usuário no círculo
+
+                // Agora nós mostramos o ENVELOPE inteiro (que contém o círculo e o menu oculto)
+                document.getElementById('menu-usuario').style.display = 'block';
+
+                // A letra continua igual
                 document.getElementById('letra-perfil').innerText = dados.nome.charAt(0).toUpperCase();
-            } else {
+            }
+            else {
                 // Se der Erro 401, limpa o token quebrado
                 localStorage.removeItem('meu_token');
             }
@@ -113,7 +115,35 @@ async function verificarLogin() {
     }
 }
 
-// 2. Mandamos a função executar assim que o arquivo for lido
+async function LogOut() {
+    localStorage.removeItem("meu_token")
+    document.getElementById("circulo-perfil").style.display = 'none';
+    document.getElementById("btn-login").style.display = 'block';
+
+    window.location.reload()
+
+    document.getElementById('btn-sair').addEventListener('click', function() {
+});
+}
+
+function abrirMenu() {
+    document.getElementById('caixa-menu').classList.toggle('aberta');
+}
+
+// Fecha o menu se o usuário clicar em qualquer lugar fora dele
+document.addEventListener('click', function(evento) {
+    const menu = document.getElementById('caixa-menu');
+    const circulo = document.getElementById('circulo-perfil');
+
+    // Garante que os elementos existem na tela antes de rodar (evita erros em páginas que não têm o menu)
+    if (menu && circulo) {
+        // Se o clique NÃO foi dentro do menu E NÃO foi no círculo de perfil
+        if (!menu.contains(evento.target) && !circulo.contains(evento.target)) {
+            menu.classList.remove('aberta'); // Recolhe o menu suavemente
+        }
+    }
+});
+
 carregarLoja();
 verificarLogin();
 
